@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #0a0f14;
+  color: #e8edef;
+  -webkit-font-smoothing: antialiased;
+}
+
+canvas {
+  display: block;
+  touch-action: none;
+}
+
+::selection {
+  background: rgba(74, 150, 108, 0.45);
+}
+
+/* Slim scrollbar for dark UI */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+
+/* ————————————————————————————————————————————————————————
+   ELORA design primitives — premium, restrained, no neon.
+   Palette: deep green / warm gold / soft off-white on near-black.
+———————————————————————————————————————————————————————— */
+.elora-btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5
+    font-semibold text-white shadow-lg transition-all
+    hover:brightness-110 active:scale-[0.98] disabled:opacity-50;
+  background: linear-gradient(160deg, #3d8a63 0%, #2c6b49 100%);
+  box-shadow:
+    0 10px 30px rgba(61, 138, 99, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.elora-btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5
+    font-semibold transition-all hover:bg-white/10 active:scale-[0.98]
+    disabled:opacity-50;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #dfe7ea;
+}
+
+.elora-input {
+  @apply w-full rounded-xl px-4 py-3 text-sm outline-none transition
+    placeholder:text-white/30;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.elora-input:focus {
+  border-color: rgba(98, 190, 137, 0.6);
+  box-shadow: 0 0 0 3px rgba(98, 190, 137, 0.15);
+}
+
+.elora-card {
+  @apply rounded-2xl;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.elora-label {
+  @apply mb-1.5 block text-xs font-semibold tracking-wide uppercase;
+  color: rgba(232, 237, 239, 0.55);
+}
+
+.elora-h1 {
+  @apply font-semibold text-5xl leading-tight tracking-tight;
+  font-feature-settings: "ss01";
+}
+
+.elora-mono {
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+}
